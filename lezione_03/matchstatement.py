@@ -20,4 +20,10 @@ match posizione:
         print(f"{posizione}rd")
     case _:
         print(f"{posizione}th")
+        
+# "OR" == |
+# "AND" == &
+
+
+
 
