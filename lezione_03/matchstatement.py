@@ -25,5 +25,12 @@ match posizione:
 # "AND" == &
 
 
+a = 1
+b = 2
 
-
+match (a, b):
+    
+    case (1, 2):
+        print("a is 1 and b is 2")
+    case (1, 1):
+        print("a is 1 and b is 1")
