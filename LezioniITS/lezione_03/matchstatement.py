@@ -11,7 +11,6 @@ posizione = int(input("Inserisci la posizione: "))
 # else:
 #     print(f"{posizione}th")
     
-
 match posizione:
     case 1:
         print(f"{posizione}st")
