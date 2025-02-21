@@ -57,3 +57,36 @@
 
 # for number in range(3, 31, 3):
 #     print(number)
+
+# 4-8. Cubes: A number raised to the third power is called a cube. For example, the cube of 2 is written as 2**3 in Python. 
+# Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), and use a for loop to print out the value of each cube.
+
+# list =[ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000] 
+# for num in list:
+#     print(num)
+
+
+# 4-9. Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
+
+i = 1
+list =[] 
+for i in range (1, 11):
+    list.append(i**3)
+    i += 1
+
+print(list)
+
+# 4-10. Slices: Using one of the programs you wrote in this chapter, add several lines to the end of the program that do the following:
+# • Print the message The first three items in the list are:. Then use a slice to print the first three items from that program’s list.
+# • Print the message Three items from the middle of the list are:. Then use a slice to print three items from the middle of the list.
+# • Print the message The last three items in the list are:. Then use a slice to print the last three items in the list.
+
+pizze = ["Margherita", "Diavola", "Quattro Stagioni", "Boscaiola", "Wustel e patatine", "Marinara", "Rossa", "Crostino", "Pepperoni"] 
+
+# for pizze in pizze:
+#     print(f"I like {pizze} pizza.")
+# print("I really love pizza!")
+
+print(pizze[:3])
+print(pizze[-3:])
+print(pizze[3:6])
