@@ -59,3 +59,4 @@ match dizionario:
         print("Il dizionario contiene Mario Rossi e ha 30 anni")
     case _:
         print("Il dizionario non contiene Mario Rossi")
+        print

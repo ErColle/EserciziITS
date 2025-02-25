@@ -95,18 +95,68 @@
 # Inserisci il voto: 11
 # Output: Voto non valido
 
-voto = int(input("Inserisci il voto: "))
+# voto = int(input("Inserisci il voto: "))
 
-match voto:
-    case 10:
-        print("Eccellente")
-    case 8 | 9:
-        print("Molto buono")
-    case 6 | 7:
-        print("Sufficiente")
-    case 4 | 5:
-        print("Insufficiente")
-    case 1 | 2 | 3:
-        print("Gravemente insufficiente")
-    case _:
-        print("Voto non valido")
+# match voto:
+#     case 10:
+#         print("Eccellente")
+#     case 8 | 9:
+#         print("Molto buono")
+#     case 6 | 7:
+#         print("Sufficiente")
+#     case 4 | 5:
+#         print("Insufficiente")
+#     case 1 | 2 | 3:
+#         print("Gravemente insufficiente")
+#     case _:
+#         print("Voto non valido")
+
+# Esercizio 3C-2. Scrivere un programma in Python che converta un voto di laurea italiano (sistema in 110-emi) nel sistema GPA americano (scala 0-4).
+# Il programma deve accettare in input un voto di laurea compreso tra 66 e 110, espresso come numero intero e usare un match per determinare 
+# il corrispondente GPA americano, secondo questa tabella di conversione:
+
+# - 106-110 → 4.0
+# - 101-105 → 3.7
+# - 96-100 → 3.3
+# - 91-95 → 3.0
+# - 86-90 → 2.7
+# - 81-85 → 2.3
+# - 76-80 → 2.0
+# - 70-75 → 1.7
+# - 66-69 → 1.0
+# - Altro caso → "Voto non valido"
+
+# Expected Output:
+
+# Inserisci il voto di laurea: 110
+# Output: GPA 4.0
+
+# - - - - - - - - - - - - - - - - -
+
+# Inserisci il voto di laurea: 65
+# Output: Voto non valido
+
+# voto = float(input("Inserisci voto: "))
+# match voto:
+#     case voto if 106 <= voto <= 110:
+#         print("Voto GPA: 4.0") 
+#     case voto if 101 <= voto <= 105:
+#         print("Voto GPA: 3.7")
+#     case voto if 96 <= voto <= 100:
+#         print("Voto GPA: 3.3")
+#     case voto if 91 <= voto <= 95:
+#         print("Voto GPA: 3.0")
+#     case voto if 86 <= voto <= 90:
+#         print("Voto GPA: 2.7")
+#     case voto if 81 <= voto <= 85:
+#         print("Voto GPA: 2.3")
+#     case voto if 76 <= voto <= 80:
+#         print("Voto GPA: 2.0")
+#     case voto if 70 <= voto <= 75:
+#         print("Voto GPA: 1.7")
+#     case voto if 66 <= voto <= 69:
+#         print("Voto GPA: 1.0")
+#     case _:
+#         print("Voto non valido")
+    
+
