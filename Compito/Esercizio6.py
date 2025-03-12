@@ -3,13 +3,12 @@
 
 #Il programma deve gestire anche il caso in cui n1 > n2, calcolando comunque il prodotto correttamente.
 
-n1 = int(input("Inserisci il primo numero: "))
-n2 = int(input("Inserisci il secondo numero: "))
-prodotto = 1
-if n1 > n2:
-    for i in range(n2, n1 + 1):
-        prodotto *= i
-else:
-    for i in range(n1, n2 + 1):
-        prodotto *= i
-print("Il prodotto dei numeri compresi e' ", prodotto)
+n1 = int(input("Inserisci primo numero: "))
+n2 = int(input("Inserisci secondo numero: "))
+prod = 1
+
+if n2 > n1: 
+    for num in range( n2, n1+1):
+        result = prod*num
+        print(f"{prod} * {num} = {result}")
+        prod = result

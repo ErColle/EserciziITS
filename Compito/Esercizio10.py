@@ -9,21 +9,17 @@
 #determinare e visualizzare il numero con la frequenza più alta (cioè quello che compare più volte nella lista);
 #se più numeri hanno la stessa frequenza massima, visualizzarli tutti.
 
-num: int = 1
-somma = 0
-media = 0
-smedia = 0
-nmedia = 0
+num = None
+
+def somma_pari(a):
+    if a%2 == 0:
+        somma = 0
+        somma += a
+        return somma
 
 while num != 0:
     num = int(input("Inserisci un numero (0 per terminare): "))
-    if num % 2 == 0:
-        somma += num
-    
-    if num % 2 == 1:
-        smedia += num
-        nmedia += 1
-media = smedia / nmedia
-print("La somma dei numeri pari e' ", somma)
-print("La media dei numeri dispari e' ", media)
 
+    pari = somma_pari(num)
+
+print(pari)

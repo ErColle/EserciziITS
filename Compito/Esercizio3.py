@@ -4,3 +4,9 @@
 
 stringa = str(input("Inserisci una stringa: "))
 stringa_invertita = ""
+
+for i in range(len(stringa)-1 , -1  , -1  ):
+    stringa_invertita += stringa[i]
+    
+print(stringa_invertita)
+    
