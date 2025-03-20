@@ -1,0 +1,27 @@
+round(numero, n)  # ARROTONDA IL NUMERO AL DECIMALE "n" (se n non è specificato, arrotonda all'intero più vicino)
+
+abs(numero)  # RESTITUISCE IL VALORE ASSOLUTO DI "numero"
+
+divmod(a, b)  # RESTITUISCE UNA COPPIA (QUOZIENTE, RESTO) DELLA DIVISIONE INTERA DI "a" E "b"
+
+pow(base, esponente, modulo)  # RESTITUISCE "base" AL "esponente", OPZIONALMENTE MODULATO DA "modulo"
+
+max(iterabile)  # RESTITUISCE IL VALORE MASSIMO DI UN ITERABILE (COME UNA LISTA)
+
+min(iterabile)  # RESTITUISCE IL VALORE MINIMO DI UN ITERABILE (COME UNA LISTA)
+
+sum(iterabile)  # RESTITUISCE LA SOMMA DEGLI ELEMENTI DI UN ITERABILE (COME UNA LISTA)
+
+len(iterabile)  # RESTITUISCE IL NUMERO DI ELEMENTI IN UN ITERABILE (LISTA, TUPLA, STRINGA, ETC.)
+
+sorted(iterabile)  # RESTITUISCE UNA NUOVA LISTA ORDINATA DEGLI ELEMENTI DI UN ITERABILE
+
+reversed(iterabile)  # RESTITUISCE UN ITERATORE CON GLI ELEMENTI DELL'ITERABILE IN ORDINE INVERSO
+
+all(iterabile)  # RESTITUISCE True SE TUTTI GLI ELEMENTI DELL'ITERABILE SONO "VERI"
+
+any(iterabile)  # RESTITUISCE True SE ALMENO UN ELEMENTO DELL'ITERABILE È "VERO"
+
+isinstance(oggetto, classe)  # RESTITUISCE True SE "oggetto" È UN'ISTANZA DELLA CLASSE "classe"
+
+issubclass(classe, superclass)  # RESTITUISCE True SE "classe" È UNA SOTTOSCALA DI "superclass"
