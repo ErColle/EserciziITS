@@ -35,5 +35,21 @@ persona3 = Persona("Luca", "Verdi")
 
 persona3.saluta() #RICHIAMO METODO SALUTA 
 
+#ATTRIBUTI DI CLASSE 
+
+class Student:
+    
+    studentGrades = []  #--> ATTRUBUTO DI CLASSE 
+    
+    def __init__(self, studentName, grade):
+        
+        self.name = studentName
+        self.studentGrades.append(grade)
+        
+    def getGroupAverage(cls):
+        avg = sum(cls.studentGrades) / len(cls.studentGrades)#--> cls SERVE PER ACCEDERE ATTRIBUTI DI CLASSE (equivalente self) 
+        return avg
+
+
 
   

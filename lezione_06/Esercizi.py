@@ -109,3 +109,70 @@ tigre.legs = 5
 tigre.setLegs(4)
 
 Animal.printInfo(tigre)
+
+
+# Exercise 4 (Folder 9 ex_4.py)
+# 1. Write a new class called Food, it should have name, price and
+# description as attributes.
+# 2. Instantiate at least three different foods you know and like.
+# 3. Create a new class called Menu, it should have a list (of Foods) as attribute.
+# __init__ should take a list of Foods as optional parameters (default=[])
+# 4. Create a addFood() and removeFood() for the Menu
+# 5. Create a few new Food instances. Add each to the Menu using the respective
+# Method.
+# 6. Add a method printPrices() that list all items on the Menu with their
+# prices.
+# 7. Add a Menu method getAveragePrice() that returns the average Food
+# price of the Menu
+
+print("\n\n\n\nEsercizio 4\n\n")
+
+class Food:
+    
+    def __init__(self, name, price, description):
+        self.name = name 
+        self.price = price 
+        self.description = description
+        
+pizza = Food("Pizza", 10, "Pizza margherita")
+crispy = Food("CrispyMCBacon", 8, "Best mc hamburger")
+sushi = Food("Sushi", 5, "Japanese food") 
+
+class Menu:
+    
+    def __init__ (self, foods = [] ):
+        self.foods = foods
+        
+    def addFood(self, food):
+        self.foods.append(food)
+            
+    def removeFood(self, food):
+        self.foods.remove(food)
+            
+    def printPrices(self):
+        list_prices = [] 
+        for food in self.foods: 
+            list_prices.append(food.price)
+        
+        print(list_prices)
+
+    def getAvaragePrice(self):
+        
+        somma = 0
+        
+        for food in self.foods:
+            somma += food.price
+        media = somma / len(self.foods)
+        print(f"La media dei prezzi è : {media }")
+            
+pasta = Food("Pizza", 12, "pasta with eggs and guanciale")
+
+
+menu = Menu()
+menu.addFood(pasta)
+menu.addFood(pizza)
+menu.addFood(sushi)
+menu.addFood(crispy)
+
+menu.printPrices()
+menu.getAvaragePrice()
