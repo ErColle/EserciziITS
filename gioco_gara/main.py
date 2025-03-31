@@ -6,6 +6,9 @@
 Introdurre fattori ambientali che possono influenzare la corsa, come il meteo.
 Ad esempio, la pioggia può ridurre la velocità di avanzamento o aumentare la probabilità di scivolate per entrambi i concorrenti. 
 Implementare un sistema dove le condizioni 'soleggiato' e 'pioggia' cambiano dinamicamente ogni 10 tick dell'orologio.
+Modificatori mossa:
+- La Tartaruga in caso di pioggia subisce penalità -1 su ogni mossa. In caso di sole non subisce variazioni.
+- La Lepre in caso di pioggia subisca una penalità -2 su ogni mossa. In caso di sole non subisce variazioni.
  """
 import time 
 import random
@@ -37,7 +40,7 @@ def gara():
         time.sleep(1)
         os.system('cls')
     
-    print(f"BANG !!!!! AND THEY'RE OFF !!!!!")
+    print(f"BANG !!!!! AND THEY'RE OFF !!!!!\n\n\n\n\n")
     print(" ".join(percorso))
     time.sleep(1)
     os.system('cls')
