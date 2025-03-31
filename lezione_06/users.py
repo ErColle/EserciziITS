@@ -22,7 +22,7 @@ class Privileges:
     
     def __init__(self, *args):
         
-        self.privleges = args
+        self.privileges = args
     
     def show_privileges(self):
         
@@ -34,3 +34,11 @@ class Admin:
         
         self.user = user
         self.privileges = privileges
+
+    def describe_user(self):
+        
+        self.describe_user()
+        
+    def show_privileges(self):
+        
+        self.show_privileges()
