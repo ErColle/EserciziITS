@@ -59,25 +59,29 @@ pokehouse.describe_restaurant()
 # Make another method called greet_user() that prints a personalized greeting to the user. 
 # Create several instances representing different users, and call both methods for each user.
 
-class User:
+# class User:
     
-    def __init__(self, nome, cognome, eta, sesso):
-        self.nome = nome
-        self.cognome = cognome
-        self.eta = eta
-        self.sesso = sesso
+#     def __init__(self, nome, cognome, eta, sesso):
+#         self.nome = nome
+#         self.cognome = cognome
+#         self.eta = eta
+#         self.sesso = sesso
         
-    def describe_user(self):
-        print(f"Nome: {self.nome}\nCognome: {self.cognome}\nEta: {self.eta}\nSesso: {self.sesso}")
+#     def describe_user(self):
+#         print(f"Nome: {self.nome}\nCognome: {self.cognome}\nEta: {self.eta}\nSesso: {self.sesso}")
         
-    def greet_user(self):
-        print(f"Ciao {self.nome} {self.cognome}!") 
+#     def greet_user(self):
+#         print(f"Ciao {self.nome} {self.cognome}!") 
         
 
-alessandro = User("Alessandro", "Colella", 20, "M")
+#     def reset_login_attempts(self):
+#         self.login_attempts = 0
+
+
+# alessandro = User("Alessandro", "Colella", 20, "M")
     
-alessandro.describe_user()
-alessandro.greet_user()
+# alessandro.describe_user()
+# alessandro.greet_user()
     
 
 # 9-4. Number Served: Start with your program from Exercise 9-1.
@@ -118,3 +122,71 @@ restaurant.increment_number_served(11)
 
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
+
+
+# 9-5. Login Attempts: Add an attribute called login_attempts to your User class from Exercise 9-3. 
+# Write a method called increment_login_attempts() that increments the value of login_attempts by 1. 
+# Write another method called reset_login_attempts() that resets the value of login_attempts to 0. 
+# Make an instance of the User class and call increment_login_attempts() several times. 
+# Print the value of login_attempts to make sure it was incremented properly, and then call reset_login_attempts(). 
+# Print login_attempts again to make sure it was reset to 0.
+
+class User:
+    
+    def __init__(self, nome, cognome, eta, sesso, login_attempts = 0 ):
+        
+        self.nome = nome
+        self.cognome = cognome
+        self.eta = eta
+        self.sesso = sesso
+        self.login_attempts = login_attempts
+        
+    def describe_user(self):
+        print(f"Nome: {self.nome}\nCognome: {self.cognome}\nEta: {self.eta}\nSesso: {self.sesso}")
+        
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+        
+    def greet_user(self):
+        print(f"Ciao {self.nome} {self.cognome}!") 
+        
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+        
+        print(self.login_attempts)
+        
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        
+        print(self.login_attempts)
+        
+
+luca = User("Luca", "Colella", 20, "M")
+    
+luca.describe_user()
+luca.greet_user()
+
+luca.increment_login_attempts()
+luca.increment_login_attempts()
+luca.increment_login_attempts()
+luca.increment_login_attempts()
+
+luca.reset_login_attempts()
+
+
+# 9-6. Ice Cream Stand: An ice cream stand is a specific kind of restaurant.
+# Write a class called IceCreamStand that inherits from the Restaurant class you wrote in Exercise 9-1  or Exercise 9-4. 
+# Either version of the class will work; just pick the one you like better. 
+# Add an attribute called flavors that stores a list of ice cream flavors. 
+# Write a method that displays these flavors. Create an instance of IceCreamStand, and call this method.
+ 
+# 9-8. Privileges: Write a separate Privileges class. 
+# The class should have one attribute, privileges, that stores a list of strings as described in Exercise 9-7. 
+# Move the show_privileges() method to this class. Make a Privileges instance as an attribute in the Admin class. 
+# Create a new instance of Admin and use your method to show its privileges.
+
+# 9-10. Imported Restaurant: Using your latest Restaurant class, store it in a module.
+# Make a separate file that imports Restaurant. Make a Restaurant instance, and call one of Restaurant’s methods to show that the import statement is working properly.
+
+
+
