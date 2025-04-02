@@ -114,6 +114,6 @@ def lepre_move(posizione_lepre, ambiente):
         elif numero <= 8:
             posizione_lepre = max(1, posizione_lepre - 2)
     
-    return posizione_lepre
+    return min(posizione_lepre, 70) 
 
 gara()
