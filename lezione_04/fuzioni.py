@@ -110,6 +110,18 @@ def total(**kwargs):
     print(kwargs)
     
 total(caffe = 10, cappuccino = 20)
+
+#FUNZIONE RICORSIVA 
+
+def conto_alla_rovescia(n):
+    if n <= 0:  # Caso base: quando n è 0, smettiamo di chiamare la funzione
+        print("BOOM!")
+    else:
+        print(n)
+        conto_alla_rovescia(n - 1)  # Passo ricorsivo --> RICHIAMA LA FUNZIONE STESSA PER RIPETERLA
+
+conto_alla_rovescia(5)
+
     
 
 
