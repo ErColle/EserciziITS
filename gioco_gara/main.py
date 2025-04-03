@@ -3,7 +3,7 @@ import random
 import os
 import sys
 
-def gara(lunghezza_percorso):
+def gara():
     
     #variabili
     
@@ -19,7 +19,7 @@ def gara(lunghezza_percorso):
         14: 2
     }
     
-
+    lunghezza_percorso = 70
     ambiente = "Soleggiato"
     posizione_tartaruga = 1
     posizione_lepre = 1
@@ -28,89 +28,117 @@ def gara(lunghezza_percorso):
     countdown = 3
     
     percorso = ['_'] * lunghezza_percorso
-    percorso.append("🏇🌲")
+    percorso.append("🏅🌲")
+    percorso[posizione_lepre-1] = "🐰"
+    percorso[posizione_tartaruga] = "🐢"
     
     #STAMPA BONUS E MALUS NEL PERCORSO
-    for posizioni in ostacoli.keys():
-            percorso[posizioni-1] = "x"
     
+    for posizioni in ostacoli.keys():
+            percorso[posizioni-1] = "▫"
+
     for posizioni in bonus.keys():
-            percorso[posizioni-1] = "^"
+            percorso[posizioni-1] = "☆"
     
     while countdown != 0:
-        print(f"                              📢 RACE STARTS IN {countdown} 📢\n\n\n\n\n")
+        print(f"                                                          📢 RACE STARTS IN {countdown} 📢\n\n\n\n\n")
         print(f"🌲🏁 {' '.join(percorso)}")
         countdown -= 1
         time.sleep(1)
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('clear')
 
     print(f"🔥 BANG !!!!! AND THEY'RE OFF !!!!! 🔥\n\n\n\n\n")
     print(f"🌲🏁 {' '.join(percorso)}")
     time.sleep(1)
-    os.system('cls')
+    os.system('clear')
 
     while True:
-        os.system('cls')
-
+        os.system('clear')
+        
         # CAMBIO AMBIENTE OGNI 10 SEC/TICK
         if timer % 10 == 0:
             ambiente = "Soleggiato" if ambiente == "Piovoso" else "Piovoso"
 
         # CREAZIONE PERCORSO 
         percorso = ['_' if ambiente == "Soleggiato" else '~'] * lunghezza_percorso
-        percorso.append("🏇🌲")
+        percorso.append("🏅🌲")
         
-        #STAMPA BONUS E MALUS NEL PERCORSO --. DA VEDERE 
+        #STAMPA BONUS E MALUS NEL PERCORSO
         for posizioni in ostacoli.keys():
-            percorso[posizioni-1] = "x"
+            percorso[posizioni-1] = "▫"
     
         for posizioni in bonus.keys():
-            percorso[posizioni-1] = "^"
+            percorso[posizioni-1] = "☆"
 
-        posizione_tartaruga = tartaruga_move(posizione_tartaruga, ambiente, lunghezza_percorso)
-        posizione_lepre = lepre_move(posizione_lepre, ambiente, lunghezza_percorso)
+        posizione_tartaruga = tartaruga_move(posizione_tartaruga, ambiente)
+        posizione_lepre = lepre_move(posizione_lepre, ambiente)
+        
+        # Assicura che le posizioni non superino la lunghezza del percorso
+        posizione_tartaruga = min(posizione_tartaruga, lunghezza_percorso)
+        posizione_lepre = min(posizione_lepre, lunghezza_percorso)
+
 
         percorso[min(posizione_lepre, lunghezza_percorso) - 1] = "🐰"
         percorso[min(posizione_tartaruga, lunghezza_percorso) - 1] = "🐢"
         
+        #MALUSS 
         
+        for chiave, valore in ostacoli.items():
+            if posizione_lepre == chiave:
+                print("⬇⬇⬇MALUSSS🐰⬇⬇⬇")
+                
+        for chiave, valore in ostacoli.items():
+            if posizione_tartaruga == chiave:
+                print("⬇⬇⬇MALUSSS🐢⬇⬇⬇")
+                
+        #BONUSSS
+                
+        for chiave, valore in bonus.items():
+            if posizione_lepre == chiave:
+                print("⬆⬆⬆BONUSSS🐰⬆⬆⬆")
+                
+        for chiave, valore in bonus.items():
+            if posizione_tartaruga == chiave:
+                print("⬆⬆⬆BONUSSS🐢⬆⬆⬆")
+
         #VARIAZIONI POSIZIONI OSTACOLI --. DA VEDERE 
-        for chiave, valore in ostacoli.items():
-            if posizione_lepre == chiave:
-                posizione_lepre += valore 
-                print("⬇⬇ MALUS 🐰 ⬇⬇")
-                percorso[posizione_lepre - valore] = str(valore)
-            else: 
-                pass
+        # for chiave, valore in ostacoli.items():
+        #     if posizione_lepre == chiave:
+        #         posizione_lepre += valore 
+        #         print("⬇⬇ MALUS 🐰 ⬇⬇")
+        #         percorso[posizione_lepre - valore] = str(valore)
+        #     else: 
+        #         pass
                 
-        for chiave, valore in ostacoli.items():
-            if posizione_tartaruga == chiave:
-                posizione_tartaruga += valore 
-                print("⬇⬇ MALUS 🐢 ⬇⬇")
-                percorso[posizione_tartaruga - valore] = str(valore)
-            else:
-                pass
+        # for chiave, valore in ostacoli.items():
+        #     if posizione_tartaruga == chiave:
+        #         posizione_tartaruga += valore 
+        #         print("⬇⬇ MALUS 🐢 ⬇⬇")
+        #         percorso[posizione_tartaruga - valore] = str(valore)
+        #     else:
+        #         pass
         
-        #VARIAZIONI POSIZIONI BONUS
-        for chiave, valore in bonus.items():
-            if posizione_lepre == chiave:
-                posizione_lepre += valore 
-                print("⬆⬆ BONUSSS 🐰 ⬆⬆")
-                percorso[posizione_lepre - valore] = str(f"+{valore}")
-            else: 
-                pass
+        # #VARIAZIONI POSIZIONI BONUS
+        # for chiave, valore in bonus.items():
+        #     if posizione_lepre == chiave:
+        #         posizione_lepre += valore 
+        #         print("⬆⬆ BONUSSS 🐰 ⬆⬆")
+        #         percorso[posizione_lepre - valore] = str(f"+{valore}")
+        #     else: 
+        #         pass
                 
-        for chiave, valore in bonus.items():
-            if posizione_tartaruga == chiave:
-                posizione_tartaruga += valore 
-                print("⬆⬆ BONUSSS 🐢 ⬆⬆")
-                percorso[posizione_tartaruga - valore] = str(f"+{valore}")
-            else:
-                pass
+        # for chiave, valore in bonus.items():
+        #     if posizione_tartaruga == chiave:
+        #         posizione_tartaruga += valore 
+        #         print("⬆⬆ BONUSSS 🐢 ⬆⬆")
+        #         percorso[posizione_tartaruga - valore] = str(f"+{valore}")
+        #     else:
+        #         pass
 
         # SE STESSA POSIZIONE "OUCH"
         if posizione_lepre == posizione_tartaruga:
             percorso[min(posizione_lepre, lunghezza_percorso) - 1] = "OUCH"
+
 
         # PRINT INFOS 
         print(f"🕓 Durata gara: {timer} secondi")
@@ -122,17 +150,18 @@ def gara(lunghezza_percorso):
         # CRITERI DI VINCITA E PAREGGIO
         if posizione_tartaruga >= lunghezza_percorso or posizione_lepre >= lunghezza_percorso:
             if posizione_tartaruga >= lunghezza_percorso and posizione_lepre < lunghezza_percorso:
-                print("\nLA TARTARUGA HA VINTO 🏆!!! YAY!!!\n")
+                print("\n                                                        LA TARTARUGA HA VINTO 🏆!!! YAY!!!\n")
             elif posizione_lepre >= lunghezza_percorso and posizione_tartaruga < lunghezza_percorso:
-                print("\nLA LEPRE HA VINTO 🏆!!! YUCH!!!\n")
+                print("\n                                                        LA LEPRE HA VINTO 🏆!!! YUCH!!!\n")
             else:
                 print("\nPAREGGIO! 🏆 🐢🐰 🏆")
             sys.exit()
 
+
         time.sleep(1)
         timer += 1  
 
-def tartaruga_move(posizione_tartaruga, ambiente, lunghezza_percorso):
+def tartaruga_move(posizione_tartaruga, ambiente):
     numero = random.randint(1, 10)
 
     if ambiente == "Piovoso":
@@ -150,9 +179,9 @@ def tartaruga_move(posizione_tartaruga, ambiente, lunghezza_percorso):
         else:  # 30% 
             posizione_tartaruga += 1
 
-    return min(posizione_tartaruga, lunghezza_percorso)
+    return posizione_tartaruga
 
-def lepre_move(posizione_lepre, ambiente, lunghezza_percorso):
+def lepre_move(posizione_lepre, ambiente):
     numero = random.randint(1, 10)
 
     if ambiente == "Piovoso":
@@ -178,13 +207,8 @@ def lepre_move(posizione_lepre, ambiente, lunghezza_percorso):
         else:  # 20% 
             posizione_lepre = max(1, posizione_lepre - 2)
 
-    return min(posizione_lepre, lunghezza_percorso)
+    return posizione_lepre
 
-os.system('cls')
-# Input lunghezza percorso con controllo dei valori
-percorso_len = int(input("Inserisci lunghezza percorso | Minimo 30 Massimo 70: "))
-if not (30 <= percorso_len <= 70):
-    print("\n\n\n❗Errore! Valore inserito non valido! ❗\n\n")
-    sys.exit()
+os.system('clear')
 
-gara(percorso_len)
+gara()
