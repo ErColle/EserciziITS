@@ -77,67 +77,49 @@ def gara():
         posizione_tartaruga = min(posizione_tartaruga, lunghezza_percorso)
         posizione_lepre = min(posizione_lepre, lunghezza_percorso)
 
-
-        percorso[min(posizione_lepre, lunghezza_percorso) - 1] = "🐰"
-        percorso[min(posizione_tartaruga, lunghezza_percorso) - 1] = "🐢"
         
         #MALUSS 
         
         for chiave, valore in ostacoli.items():
             if posizione_lepre == chiave:
+                posizione_lepre = posizione_lepre + valore 
                 print("⬇⬇⬇MALUSSS🐰⬇⬇⬇")
+                percorso[chiave-1] = str(valore) 
+            else:
+                pass
                 
         for chiave, valore in ostacoli.items():
             if posizione_tartaruga == chiave:
+                posizione_tartaruga = posizione_tartaruga + valore
                 print("⬇⬇⬇MALUSSS🐢⬇⬇⬇")
-                
+                percorso[chiave-1] = str(valore) 
+            else: 
+                pass
         #BONUSSS
                 
         for chiave, valore in bonus.items():
             if posizione_lepre == chiave:
+                posizione_lepre = posizione_lepre + valore
                 print("⬆⬆⬆BONUSSS🐰⬆⬆⬆")
+                percorso[chiave-1] = str(f"+ {valore}") 
+            else: 
+                pass
                 
         for chiave, valore in bonus.items():
             if posizione_tartaruga == chiave:
+                posizione_tartaruga = posizione_tartaruga + valore
                 print("⬆⬆⬆BONUSSS🐢⬆⬆⬆")
-
-        #VARIAZIONI POSIZIONI OSTACOLI --. DA VEDERE 
-        # for chiave, valore in ostacoli.items():
-        #     if posizione_lepre == chiave:
-        #         posizione_lepre += valore 
-        #         print("⬇⬇ MALUS 🐰 ⬇⬇")
-        #         percorso[posizione_lepre - valore] = str(valore)
-        #     else: 
-        #         pass
-                
-        # for chiave, valore in ostacoli.items():
-        #     if posizione_tartaruga == chiave:
-        #         posizione_tartaruga += valore 
-        #         print("⬇⬇ MALUS 🐢 ⬇⬇")
-        #         percorso[posizione_tartaruga - valore] = str(valore)
-        #     else:
-        #         pass
-        
-        # #VARIAZIONI POSIZIONI BONUS
-        # for chiave, valore in bonus.items():
-        #     if posizione_lepre == chiave:
-        #         posizione_lepre += valore 
-        #         print("⬆⬆ BONUSSS 🐰 ⬆⬆")
-        #         percorso[posizione_lepre - valore] = str(f"+{valore}")
-        #     else: 
-        #         pass
-                
-        # for chiave, valore in bonus.items():
-        #     if posizione_tartaruga == chiave:
-        #         posizione_tartaruga += valore 
-        #         print("⬆⬆ BONUSSS 🐢 ⬆⬆")
-        #         percorso[posizione_tartaruga - valore] = str(f"+{valore}")
-        #     else:
-        #         pass
+                percorso[chiave-1] = str(f"+ {valore}") 
+            else: 
+                pass
 
         # SE STESSA POSIZIONE "OUCH"
         if posizione_lepre == posizione_tartaruga:
             percorso[min(posizione_lepre, lunghezza_percorso) - 1] = "OUCH"
+            
+        #LITITE POSIZIONE A MASSIMO PERCORSO 
+        percorso[min(posizione_lepre, lunghezza_percorso) - 1] = "🐰"
+        percorso[min(posizione_tartaruga, lunghezza_percorso) - 1] = "🐢"
 
 
         # PRINT INFOS 
