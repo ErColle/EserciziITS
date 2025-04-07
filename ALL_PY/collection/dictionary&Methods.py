@@ -1,8 +1,13 @@
-persona = {
-    "nome": "Luca",  # CHIAVE: "nome", VALORE: "Luca"
-    "cognome": "Rossi",
-    "eta": 20
+mio_dizionario = {
+    "nome": "Mario",
+    "età": 30,
+    "città": "Roma"
 }
+
+# Accesso ai valori tramite la chiave
+print(mio_dizionario["nome"])  # Stampa: Mario
+print(mio_dizionario.get("età"))  # Stampa: 30
+
 
 dizionario["chiave"] = valore  # ASSEGNA UN VALORE A UNA CHIAVE (AGGIUNGE O MODIFICA)
 
