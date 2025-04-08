@@ -33,8 +33,8 @@ def gara():
     percorso[posizione_lepre-1] = "🐰"
     percorso[posizione_tartaruga] = "🐢"
     
-    stamina_tartaruga = 30
-    stamina_lepre = 30
+    stamina_tartaruga = 100
+    stamina_lepre = 100
     
     #STAMPA BONUS E MALUS NEL PERCORSO
     
@@ -134,8 +134,8 @@ def gara():
         print(f"🔸 Posizione tartaruga: {posizione_tartaruga}\n\n")
         print(f"🌲🏁 {' '.join(percorso)}")
  
-        print(f"\n🔋 Stamina: {stamina_tartaruga} 🐢")
-        print(f"\n🔋 Stamina: {stamina_lepre} 🐰")
+        print(f"\n🔋 Stamina: {stamina_tartaruga}% 🐢")
+        print(f"\n🔋 Stamina: {stamina_lepre}% 🐰")
         
         # CRITERI DI VINCITA E PAREGGIO
         if posizione_tartaruga >= lunghezza_percorso or posizione_lepre >= lunghezza_percorso:
@@ -153,57 +153,75 @@ def gara():
 
 def tartaruga_move(posizione_tartaruga, ambiente, stamina_tartaruga):
     numero = random.randint(1, 10)
+    if stamina_tartaruga > 0:
+        if ambiente == "Piovoso":
+            if numero <= 3:  # 30% 
+                posizione_tartaruga = max(1, posizione_tartaruga - 6)
+                stamina_tartaruga -= 10
+            elif numero <= 8:  # 50% 
+                posizione_tartaruga += 3
+                stamina_tartaruga -= 5
+            else:  # 20% 
+                posizione_tartaruga += 1
+                stamina_tartaruga -= 3
+        else:
+            if numero <= 5:  # 50% 
+                posizione_tartaruga += 3
+                stamina_tartaruga -= 5
+            elif numero <= 7:  # 20% 
+                posizione_tartaruga = max(1, posizione_tartaruga - 6)
+                stamina_tartaruga -= 10
+            else:  # 30% 
+                posizione_tartaruga += 1
+                stamina_tartaruga -= 3
+    else: 
+        stamina_tartaruga += 10 
+        
 
-    if ambiente == "Piovoso":
-        if numero <= 3:  # 30% 
-            posizione_tartaruga = max(1, posizione_tartaruga - 6)
-            stamina_tartaruga -= 10
-        elif numero <= 8:  # 50% 
-            posizione_tartaruga += 3
-            stamina_tartaruga -= 5
-        else:  # 20% 
-            posizione_tartaruga += 1
-            stamina_tartaruga -= 3
-    else:
-        if numero <= 5:  # 50% 
-            posizione_tartaruga += 3
-            stamina_tartaruga -= 5
-        elif numero <= 7:  # 20% 
-            posizione_tartaruga = max(1, posizione_tartaruga - 6)
-            stamina_tartaruga -= 10
-        else:  # 30% 
-            posizione_tartaruga += 1
-            stamina_tartaruga -= 3
+    return posizione_tartaruga, max(stamina_tartaruga, 0)
 
-    return posizione_tartaruga, stamina_tartaruga
 
 def lepre_move(posizione_lepre, ambiente, stamina_lepre):
     numero = random.randint(1, 10)
 
-    if ambiente == "Piovoso":
-        if numero <= 3:  # 30% 
+    if stamina_lepre <= 0:
+        if (ambiente == "Piovoso" and numero <= 3) or (ambiente != "Piovoso" and numero <= 2):
             stamina_lepre += 10
-        elif numero <= 5:  # 20% 
-            posizione_lepre += 9
-        elif numero <= 6:  # 10% 
-            posizione_lepre = max(1, posizione_lepre - 12)
-        elif numero <= 8:  # 20% 
-            posizione_lepre += 1
-        else:  # 20% 
-            posizione_lepre = max(1, posizione_lepre - 2)
-    else:
-        if numero <= 2:  # 20%
-            stamina_lepre += 10 
-        elif numero <= 4:  # 20% 
-            posizione_lepre += 9
-        elif numero <= 5:  # 10%
-            posizione_lepre = max(1, posizione_lepre - 12)
-        elif numero <= 7:  # 30% 
-            posizione_lepre += 1
-        else:  # 20% 
-            posizione_lepre = max(1, posizione_lepre - 2)
+        return posizione_lepre, stamina_lepre
 
-    return posizione_lepre, stamina_lepre
+    if ambiente == "Piovoso":
+        if numero <= 5:          # 50%
+            posizione_lepre += 9
+            stamina_lepre -= 15
+        elif numero <= 6:        # 10%
+            posizione_lepre = max(1, posizione_lepre - 12)
+            stamina_lepre -= 20
+        elif numero <= 8:        # 20%
+            posizione_lepre += 1
+            stamina_lepre -= 3
+        else:                    # 20%
+            posizione_lepre = max(1, posizione_lepre - 2)
+            stamina_lepre -= 8
+    else:  # Tempo sereno
+        if numero <= 2:          # 20%
+            stamina_lepre += 10
+        elif numero <= 4:        # 20%
+            posizione_lepre += 9
+            stamina_lepre -= 15
+        elif numero <= 5:        # 10%
+            posizione_lepre = max(1, posizione_lepre - 12)
+            stamina_lepre -= 20
+        elif numero <= 7:        # 20%
+            posizione_lepre += 1
+            stamina_lepre -= 3
+        else:                    # 30%
+            posizione_lepre = max(1, posizione_lepre - 2)
+            stamina_lepre -= 8
+            
+    
+    return posizione_lepre, min(max(stamina_lepre, 0), 100)
+
+
 
 os.system('clear')
 
