@@ -49,15 +49,18 @@ def gara():
         print(f"🌲🏁 {' '.join(percorso)}")
         countdown -= 1
         time.sleep(1)
-        os.system('clear')
+        clear_screen()
+
 
     print(f"🔥 BANG !!!!! AND THEY'RE OFF !!!!! 🔥\n\n\n\n\n")
     print(f"🌲🏁 {' '.join(percorso)}")
     time.sleep(1)
-    os.system('clear')
+    clear_screen()
+
 
     while True:
-        os.system('clear')
+        clear_screen()
+
         
         # CAMBIO AMBIENTE OGNI 10 SEC/TICK
         if timer % 10 == 0:
@@ -221,8 +224,9 @@ def lepre_move(posizione_lepre, ambiente, stamina_lepre):
     
     return posizione_lepre, min(max(stamina_lepre, 0), 100)
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-
-os.system('clear')
+clear_screen()
 
 gara()
