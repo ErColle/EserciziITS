@@ -3,4 +3,6 @@
 3 - DOM     Libreria (oggeto)  contenitore : attributi (variabili) e metodi (azioni) 
             document        modificare dinamicamente HTML 
             2 modi : DA SOLO                eventi (onclick) --- non c'è logica applicativa
-                     TRAMITE JAVASCRIPT     eventi 
+                     TRAMITE JAVASCRIPT     eventi (onclick) --- logica applicativa (if for...)
+
+4 JAVASCRIPT (simile a python)
