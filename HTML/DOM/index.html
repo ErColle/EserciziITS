@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>DOM</title>
+    <script>
+        //js : funzioni (blocco di istruzioni) che hanno un nome di riferimiento
+        function test(){
+
+            document.body.style.background = 'red';
+
+            let x = document.getElementById("miotitolo"); //metto il mio titolo (h2) in variabile x
+
+            x.style.color = "blue";
+            x.setAttribute("onclick", "document.body.style.background = 'green'");  
+
+            let y = document.createElement("h1")
+            y.innerHTML = ("CIAO CIAO");
+            y.style.color = "yellow";
+            y.style.backgroundColor = "black";
+            y.setAttribute("id", "pippo")
+
+            x.append(y)
+
+        } 
+
+        function modifica(){
+
+            let z = document.getElementById("pippo")
+            z.innerHTML = "Arrivederci"
+
+            document.getElementById("nominativo").value;
+
+            if ( nome == '' ) {
+
+            } else {
+                
+            }   
+
+
+        } 
+
+    </script>
+</head>
+<body>
+    <h1 id= "miotitolo" > DOM Document Object Model</h1>
+    <h2 id= "sottotitolo" >DOM oggetto visualizza la pagina html in modo gerarchico :
+
+        JAVASCRIPT (CSS) ... blocco tag script o esterno 
+
+        1. - recuperare l'elemento ... getElementById()
+
+        2. decidere : MODIFICARE ATTRIBUTO
+                      GESTIRE EVENTO 
+                      MODIFICARE CSS 
+                      CREARE TAG 
+    </h2>
+    <input type="text" name="nome" id = "nominativo">
+    <!-- <div onClick="document.body.style.background = 'red'"> Cambia colore sfondo </div> -->
+    <div onClick="test()" id = "miodiv"> Cambia colore sfondo </div>
+     
+</body>
+</html>

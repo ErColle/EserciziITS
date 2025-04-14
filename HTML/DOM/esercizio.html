@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Modulo di Registrazione</title>
+  <script>
+
+    function controllo() {
+
+        let name = document.getElementById("nome").value;
+        let surname = document.getElementById("cognome").value;
+        let region = document.getElementById("regione").value;
+        let phonenumber = document.getElementById("telefono").value;
+        let email = document.getElementById("email").value;
+        let matricola = document.getElementById("matricola").value;
+
+
+
+        if (name == '')  {
+
+            window.alert("Inserisci nome!");
+
+        } 
+        
+        if (surname == '')  {
+
+            window.alert("Inserisci cognome!");
+
+        } 
+
+        if ( region == '')  {
+
+            window.alert("Seleziona una regione!");
+
+        } 
+
+        if ( email == '' || phonenumber == '')  {
+
+
+            window.alert("Inserisci Email o Numero di telefono! ");
+
+        } 
+
+        if ( isNaN(matricola) ) {
+
+            window.alert("Matricola formata solo da numeri!");
+
+        } 
+
+        if ( matricola == '' ) {
+
+            window.alert("Inserisci matricola!");
+
+        } 
+    } 
+
+
+  </script>
+
+</head>
+<body>
+  <h1>Modulo di Registrazione</h1>
+  <form name = "form">
+    
+    <label for="cognome">Cognome:</label><br>
+    <input type="text" id="cognome" name="cognome" size = "40"><br><br>
+
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" size="30" ><br><br>
+
+    <label for="matricola">Matricola:</label><br>
+    <input type="text" id="matricola" name="matricola" size="12"><br><br>
+
+    <label for="regione">Regione di residenza:</label><br>
+    <select id="regione" name="regione">
+      <option value=""></option>
+      <option value="abruzzo">Abruzzo</option>
+      <option value="basilicata">Basilicata</option>
+      <option value="calabria">Calabria</option>
+      <option value="campania">Campania</option>
+      <option value="emilia-romagna">Emilia-Romagna</option>
+      <option value="friuli-venezia-giulia">Friuli-Venezia Giulia</option>
+      <option value="lazio">Lazio</option>
+      <option value="liguria">Liguria</option>
+      <option value="lombardia">Lombardia</option>
+      <option value="marche">Marche</option>
+      <option value="molise">Molise</option>
+      <option value="piemonte">Piemonte</option>
+      <option value="puglia">Puglia</option>
+      <option value="sardegna">Sardegna</option>
+      <option value="sicilia">Sicilia</option>
+      <option value="toscana">Toscana</option>
+      <option value="trentino-alto-adige">Trentino-Alto Adige</option>
+      <option value="umbria">Umbria</option>
+      <option value="valle-d-aosta">Valle d'Aosta</option>
+      <option value="veneto">Veneto</option>
+    </select><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" size="30"><br><br>
+
+    <label for="telefono">Telefono:</label><br>
+    <input type="tel" id="telefono" name="telefono" size="15"><br><br>
+
+    <label for="richieste">Richieste particolari:</label><br>
+    <textarea id="richieste" name="richieste" rows="12" cols="60"></textarea><br><br>
+
+    <input type="button" value="Invia" onClick = "controllo()">
+    <input type="reset" value="Reset">
+  
+  </form>
+</body>
+</html>

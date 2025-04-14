@@ -39,10 +39,10 @@ def gara():
     #STAMPA BONUS E MALUS NEL PERCORSO
     
     for posizioni in ostacoli.keys():
-            percorso[posizioni-1] = "▫"
+            percorso[posizioni-1] = "❗"
 
     for posizioni in bonus.keys():
-            percorso[posizioni-1] = "☆"
+            percorso[posizioni-1] = "✔️"
     
     while countdown != 0:
         print(f"                                                          📢 RACE STARTS IN {countdown} 📢\n\n\n\n\n")
@@ -72,10 +72,10 @@ def gara():
         
         #STAMPA BONUS E MALUS NEL PERCORSO
         for posizioni in ostacoli.keys():
-            percorso[posizioni-1] = "▫"
+            percorso[posizioni-1] = "❗"
     
         for posizioni in bonus.keys():
-            percorso[posizioni-1] = "☆"
+            percorso[posizioni-1] = "✔️"
             
         #RICHIAMO FUNZIONI DI MOVIMENTO  
         posizione_tartaruga, stamina_tartaruga = tartaruga_move(posizione_tartaruga, ambiente, stamina_tartaruga)
