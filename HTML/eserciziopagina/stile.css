@@ -1,0 +1,54 @@
+.listalogin {
+
+    background-color: lightgray;
+    margin-bottom: 20px;
+    display: block;
+} 
+
+
+
+.listacatalogo {
+
+    background-color: lightgray;
+
+} 
+
+.righecatalogo {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+  }
+
+.listacatalogo b{
+
+    display: block;
+    padding-top: 3px;
+    margin-top: 0;
+}
+
+.righecatalogo li {
+    color: white;
+    background-color: rgb(155, 154, 154);
+    border-radius: 5px;
+    display: block;
+    margin: 2px; 
+    padding: 3px;
+  }
+
+
+.info {
+    background-color: #e0e0e0; 
+    padding: 5px;
+    margin-bottom: 5px; 
+  }
+  
+  .info i {
+    background-color: #e0e0e0;
+    padding: 5px;
+    margin-bottom: 5px; 
+    text-align: right; 
+    display: block;
+  }
+  
+
+
