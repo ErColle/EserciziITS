@@ -3,7 +3,7 @@ import re
 # 1. Riconoscere numeri
 # Obiettivo: Definire una RegEx che riconosca solo stringhe composte da cifre.
 
-text = "09-04-2025"
+text = "AB12CD34"
 
 """ if re.match(r"^\d+$", text):
     print("parola composta da cifre") """
@@ -81,14 +81,22 @@ text = "09-04-2025"
 
 # Esercizio 6.1: Scrivi una RegEx per identificare un codice prodotto nel formato PROD-1234-XY.
 
-if re.match
+""" if re.match(r"^[A-Z]{4}-\d{4}-[A-Z]{2}", text):
+    print("true") """
 
 # Esercizio 6.2: Crea una RegEx per un ID alfanumerico di esattamente 8 caratteri, che può contenere lettere maiuscole e numeri (es. AB12CD34).
+
+""" if re.match(r"^[a-zA-Z0-9]{8}", text):
+    print("true") """
+
 # Esercizi – Comprensione di RegEx
 # Data la RegEx, occorre interpretarla.
 
 # Esercizio 7.1: Cosa fa questa RegEx? ^[A-Z][a-z]{2,}$
 # Esercizio 7.2: Quali stringhe sono accettate da \d{3}-\d{2}-\d{4}?
+
+""" nnn-nn-nnnn
+ """
 # Esercizio 7.3: Qual è l’effetto del simbolo ? in questa RegEx: colou?r
 # Bonus – Errori comuni
 # Obiettivo: Trovare errori in RegEx sbagliate.
