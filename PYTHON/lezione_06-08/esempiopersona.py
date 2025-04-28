@@ -1,70 +1,39 @@
-class Persona: 
-
-    def __init__(self):
-        self.name = ""
-        self.lastname = ""
-        self.age = ""
-    
-    def displayData(self):
-        
-        print(f"Nome: {self.name}\nCognome: {self.lastname}\nEtà: {self.age} ")
-        
-       
-   # mi consente di impostare un valore per self.name     
-    def setName( self, name:str ):
-        
+class Persona:
+    # i dati di persona sono vuoti
+    def __init__(self, name, surname, age):
         self.name = name
-        
-   # mi consente di impostare un valore per self.lastname    
-    def setLastname( self, lastname:str ):
-        
+        self.lastname = surname
+        self.age = age
+
+    def display_data(self):
+        print(f'Name: {self.name}, LastName: {self.lastname}, age: {self.age}') 
+    
+    # funzioni con set prendono paremetri in input 
+    def set_name(self, name):
+        self.name = name
+       
+    def set_lastname(self, lastname: str):
         self.lastname = lastname
-
-
-# mi consente di impostare un valore per self.age
-    def setAge( self, age:int ):
-        
-        if age < 0 or age > 120:
+    
+    def set_age(self, age: str):
+        if age < 0 or age > 130:
             self.age = 0
-        else: 
+        else:
             self.age = age
-            
-            
-# restituisce valore di name
-    def GetName(self):
-        
+    # non ha nessu input ma ritorna un valore
+    def get_name(self) -> str:
         return self.name
-
-# restituisce valore di lastname
-    def GetLastname(self):
-        
+    
+    def get_lastname(self) -> str:
         return self.lastname
     
-# restituisce valore di age   
-    def GetAge(self):
-    
+
+    def get_age(self) -> int:
         return self.age
     
-    def speak(self):
-        print(f"Hello my name is {self.GetName()}! ")
-        
+    def speak(self) -> None:
 
+        print(f'Hello my name is {self.get_name()}!')
 
-# crea oggetto di tipo persona
-f:Persona = Persona()
-
-# impostare il nome di una persona 
-f.setName("Alessandro")
-
-# impostare il cognome di una persona
-f.setLastname("Colella")
-
-#impostare l'età di una persona
-f.setAge(20)
-
-
-# stampa i dati della persona creata
-f.displayData()
-
-# stampo utilizzando il metodo get
-print(f.GetName(), f.GetLastname(), f.GetAge())
+    def __str__(self) -> str:
+        return f'Ciao mi chiamo {self.get_name()} {self.get_lastname()} ho {self.get_age()} anni!'

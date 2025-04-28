@@ -25,6 +25,9 @@ class Alieno:
 
     def speak(self):
         print("&/&%$%/$£%&/£$W/(&=&)(&&$$""%&(&")
+        
+    def __str__(self):
+        return f"Alieno proveniente dalla galassia {self.GetGalaxy()}"
 
 
 
