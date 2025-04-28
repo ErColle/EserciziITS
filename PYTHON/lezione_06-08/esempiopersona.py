@@ -45,9 +45,8 @@ class Persona:
     
         return self.age
     
-    
-    def __str__(self):
-        return f"{self.name} ha {self.age} anni"
+    def speak(self):
+        print(f"Hello my name is {self.GetName()}! ")
         
 
 
@@ -69,7 +68,3 @@ f.displayData()
 
 # stampo utilizzando il metodo get
 print(f.GetName(), f.GetLastname(), f.GetAge())
-
-# stampa utilizzando metodo str 
-print(f)
-
