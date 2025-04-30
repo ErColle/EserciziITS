@@ -2,7 +2,7 @@ class MovieCatalog:
     '''
 
     attributi della classe MovieCatalog
-    self.catalog: dict[str, list[str]]
+    # self.catalog: dict[str, list[str]]
      
     '''
     
@@ -10,6 +10,12 @@ class MovieCatalog:
     def __init__(self):
         self.setCatalog()
         
+    # metodo str
+    
+    def __str__(self):
+        return f"{self.catalog}"
+    
+    
     # metodi setter
     
     def setCatalog(self):
@@ -36,4 +42,28 @@ class MovieCatalog:
                 #  controlliamo se i film della lista movies siano gia stati inseriti dentro al catalogo
                 for movie in movies:
                     if movie in self.catalog[director_name]:
-                         
+                         print(f"Il film {movie} è gia presente nel catalogo!")
+                    else: 
+                        self.catalog[director_name].append(movie)
+            
+            # se il regista non è presente nel catalogo creare un nuovo record
+            else: 
+                self.catalog[director_name] = movies 
+                
+    def remove_movie(self,director_name, movie):
+        if not director_name: 
+            print("Fornire un nome valido per il regista!")
+
+        elif not movie:
+            print("Fornire una lista di film che non sia vuota!")
+        
+        else: 
+            if director_name in self.catalog and movie in self.catalog[director_name]:
+                
+                # rimuovere il film dalla lista 
+                self.catalog[director_name].remove(movie)
+                
+            # se la lista del film è vuota, rimuovi il regista dal catalogo     
+            if not self.catalog[director_name]:
+                del self.catalog[director_name]                      
+                      
