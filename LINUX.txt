@@ -1,0 +1,110 @@
+# Informazioni utente e sistema
+whoami             # mostra l'username dell'utente corrente
+id                 # mostra UID, GID e gruppi dell'utente corrente
+id nome_utente     # mostra UID, GID e gruppi dell'utente specificato
+who                # mostra chi è attualmente loggato nel sistema
+finger -l          # mostra informazioni dettagliate sull'utente corrente
+finger nome_utente # mostra informazioni sull'utente specificato
+last               # elenca gli ultimi utenti connessi
+uname              # mostra il nome del kernel del sistema operativo
+uname -a           # mostra tutte le informazioni sul sistema operativo
+
+# Gestione password
+passwd             # cambia la password dell'utente corrente
+
+# Manuale e descrizioni
+man comando        # apre il manuale del comando specificato
+man -k parola      # cerca nei manuali la parola chiave specificata
+whatis comando     # mostra una breve descrizione del comando
+sudo mandb         # aggiorna il database dei manuali
+
+# Navigazione del filesystem
+pwd                # mostra la directory corrente
+ls                 # elenca i file nella directory corrente
+ls -l              # elenca i file con dettagli (permessi, dimensione, ecc.)
+ls -a              # mostra anche i file nascosti
+ls -al             # mostra dettagli e file nascosti
+ls --color=never   # elenca senza colori
+ls -lt             # ordina per data di modifica
+ls -lS             # ordina per dimensione (decrescente)
+ls -lr             # ordina per dimensione (crescente)
+ls -al etc         # mostra dettagliatamente i file nella directory etc
+ls -alS etc        # come sopra, ordinati per dimensione
+cd                 # torna alla home directory
+cd nome_directory  # entra nella directory specificata
+cd ..              # sale di un livello nella gerarchia
+cd ./              # rimane nella directory corrente
+cd /usr            # spostamento assoluto in /usr
+mkdir nome         # crea una nuova directory
+mkdir dir1 dir2    # crea più directory
+mkdir dir1/sotto   # crea una directory all'interno di un'altra
+rmdir nome         # elimina una directory vuota
+
+# Visualizzazione e gestione file
+nano nomefile      # apre il file con editor nano
+touch nomefile     # crea un file vuoto o aggiorna la data
+cat nomefile       # mostra tutto il contenuto del file
+more nomefile      # mostra il contenuto una pagina alla volta
+head nomefile      # mostra le prime 10 righe
+head -n n file     # mostra le prime n righe
+tail nomefile      # mostra le ultime 10 righe
+tail -n n file     # mostra le ultime n righe
+clear              # pulisce la console
+file nomefile      # identifica il tipo di file
+
+# Gestione permessi
+chmod ugo[+=]rwx file  # modifica i permessi
+chmod u=rwx,g=rw,o-rwx file # imposta permessi specifici
+chmod u=rx,g=r,o-rwx file   # esempio con permessi diversi
+ls -l file           # mostra i permessi e i dettagli del file
+
+# Copia, spostamento, eliminazione
+cp file1 file2       # copia file1 in file2
+cp file1 dir/        # copia file1 dentro la directory dir
+cp * dir/            # copia tutti i file nella directory
+cp -r dir1 dir2      # copia ricorsivamente una directory
+rm file              # elimina un file
+rm *                 # elimina tutti i file nella directory
+rm pl*               # elimina tutti i file che iniziano per pl
+rm -r dir            # elimina directory e contenuto
+rm -ri dir           # come sopra ma con conferma
+rm -rf .*            # cancella tutti i file nascosti (pericoloso!)
+rm -rf /             # cancella tutto il filesystem (PERICOLOSO!)
+rm -rf --no-preserve-root /  # ancora più pericoloso!
+mv file1 file2       # rinomina file1 in file2
+mv file dir/         # sposta file nella directory
+dir/mv file dir/nuovonome # sposta e rinomina il file
+
+# Ricerca
+grep parola file     # cerca la parola nel file
+grep 'parola con spazi' file # cerca espressioni con spazi
+grep -i parola file  # cerca ignorando maiuscole/minuscole
+find . -name nome    # cerca file nella directory corrente
+find . -maxdepth n -name nome # cerca a profondità n
+find . -empty        # cerca file vuoti
+find . -name nome -exec cat {} \; # esegue cat sui file trovati
+tree                # mostra struttura ad albero della directory
+tree -d             # mostra solo directory
+sudo apt install finger # installa comando finger
+sudo apt install tree   # installa comando tree
+sudo apt install ncal   # installa comando cal/ncal
+
+# Redirezione I/O
+./script.sh < input.txt  # prende input da file
+comando > file           # scrive output su file
+comando >> file          # aggiunge output a file
+echo "testo"            # stampa testo a video
+echo "testo" > file     # scrive testo su file
+echo "testo" >> file    # aggiunge testo a file
+
+# Pipeline
+ls -al | grep stringa      # filtra output con grep
+cat file | head -1 | grep stringa  # filtra prima riga per stringa
+
+# Liste comandi
+comando1 ; comando2 ; comando3  # esegue comandi in sequenza
+(echo a ; echo b) > file        # esegue in subshell e scrive su file
+
+# Operatori logici
+comando1 && comando2   # esegue comando2 solo se comando1 ha successo
+comando1 || comando2   # esegue comando2 solo se comando1 fallisce
