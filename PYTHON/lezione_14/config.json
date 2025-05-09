@@ -1,0 +1,25 @@
+{
+    "appConfig": {
+        "appName": "ExampleApp",
+        "version": "1.0.0",
+        "author": "John Doe",
+        "license": "MIT"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "username": "admin",
+        "password": "password123",
+        "databaseName": "example_db"
+    },
+    "features": {
+        "enableLogging": true,
+        "maxRetries": 5,
+        "retryDelay": 2000
+    },
+    "apiKeys": {
+        "google": "GOOGLE_API_KEY",
+        "twitter": "TWITTER_API_KEY"
+    },
+    "AGGIUNTA": "NUOVO"
+}
