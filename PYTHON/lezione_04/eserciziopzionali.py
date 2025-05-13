@@ -4,7 +4,7 @@
 # The function calculates the average score and prints the student's name, average, and a message indicating whether the student passed the exam (average >= 60) or failed.
 # Create a for loop to iterate over a list of students and scores, calling the function for each student.
 
-def scool_grading_system(name:str , scores:list):
+""" def scool_grading_system(name:str , scores:list):
     count = 0
     total = 0
     
@@ -22,7 +22,7 @@ def scool_grading_system(name:str , scores:list):
 student = "alessio"
 scores = [30, 20, 50, 70] 
 
-print(scool_grading_system(student, scores))
+print(scool_grading_system(student, scores)) """
         
         
     
@@ -31,7 +31,12 @@ print(scool_grading_system(student, scores))
 # Create a function that generates a random number within a range specified by the user.
 # Prompt the user to guess the number within a specified maximum number of attempts.
 # Provide feedback to the user after each guess, indicating whether their guess is too high, too low, or correct.
-# Terminate the loop when the user guesses the number correctly or reaches the maximum number of attempts.
+# Terminate the loop when the user guesses the number correctly or reaches the maximum number of attempts.4
+import random
+
+def gen_random(range):
+    
+            
 
 # 3. E-commerce Shopping Cart:
 
