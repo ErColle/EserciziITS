@@ -32,10 +32,7 @@ print(scool_grading_system(student, scores)) """
 # Prompt the user to guess the number within a specified maximum number of attempts.
 # Provide feedback to the user after each guess, indicating whether their guess is too high, too low, or correct.
 # Terminate the loop when the user guesses the number correctly or reaches the maximum number of attempts.4
-import random
 
-def gen_random(range):
-    
             
 
 # 3. E-commerce Shopping Cart:
@@ -45,6 +42,17 @@ def gen_random(range):
 # Create a function that calculates the cart total and apply any discounts or taxes.
 # Create a funciton to print a detailed summary of the cart including products and totals.
 # Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
+
+shopping_cart: dict = 
+
+
+def denfines_product(name: str, price: int, quantity: int):
+    print(f"Product name: {name}\nPrice: {price}\nQuantity: {quantity}")
+    
+def shopping_cart(product: dict):
+
+
+
 
 # 4. Text Analysis:
 
