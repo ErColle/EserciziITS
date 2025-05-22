@@ -43,13 +43,12 @@ print(scool_grading_system(student, scores)) """
 # Create a funciton to print a detailed summary of the cart including products and totals.
 # Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
 
-shopping_cart: dict = 
-
 
 def denfines_product(name: str, price: int, quantity: int):
-    print(f"Product name: {name}\nPrice: {price}\nQuantity: {quantity}")
+    return f"Product name: {name}\nPrice: {price}\nQuantity: {quantity}"
     
-def shopping_cart(product: dict):
+def shopping_cart(products: list[dict]):
+    
 
 
 
