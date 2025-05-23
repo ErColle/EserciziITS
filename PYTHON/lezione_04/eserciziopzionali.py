@@ -1,3 +1,6 @@
+import random 
+import sys
+
 # 1. School Grading System:
 
 #  Create a function that takes a student's name and their scores in different subjects as input.
@@ -33,6 +36,40 @@ print(scool_grading_system(student, scores)) """
 # Provide feedback to the user after each guess, indicating whether their guess is too high, too low, or correct.
 # Terminate the loop when the user guesses the number correctly or reaches the maximum number of attempts.4
 
+""" def randomNumberGenerator(range):
+    
+    attempts = 5 
+    
+    num = random.randint(1, range)
+    
+    print(num)
+    
+    answer = int(input(f"Indovina il numero generato. Hai {attempts} tentativi!: "))
+    if answer == num:
+        print("Complimenti hai indovinato il numero! ")
+    else: 
+        attempts -= 1 
+        while attempts != 0: 
+            
+            if answer > num: 
+                print("Too high!")
+            
+            if answer < num: 
+                print("Too low!")
+
+            if answer == num: 
+                print("Complimenti hai inddovinato il numero! ")
+                return
+            
+            answer = int(input(f"Indovina il numero generato. Hai altri {attempts} tentativi!: "))
+            attempts -= 1
+        
+        if attempts == 0: 
+            print("Hai finito i tentativi! ")
+            
+randomNumberGenerator(10) """
+    
+                
             
 
 # 3. E-commerce Shopping Cart:
@@ -44,10 +81,10 @@ print(scool_grading_system(student, scores)) """
 # Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
 
 
-def denfines_product(name: str, price: int, quantity: int):
+""" def denfines_product(name: str, price: int, quantity: int):
     return f"Product name: {name}\nPrice: {price}\nQuantity: {quantity}"
     
-def shopping_cart(products: list[dict]):
+def shopping_cart(products: list[dict]): """
     
 
 
@@ -59,6 +96,22 @@ def shopping_cart(products: list[dict]):
 # The function should print a report showing the most frequent words and their number of occurrences.
 # You can use a for loop to iterate over the words in the text and a dictionary to store the occurrences.
 
+""" def textAnalysis(text: str):
+     words = text.split()
+     print(words) 
+     temp =[] 
+     collector_counter = {} 
+     for word in words:
+        temp.append(word)
+        if word in temp: 
+            collector_counter.append(word)
+            
+     
+
+textAnalysis("ciao smaemd alkashò ciao ooo qèueghd woo wowo suisk") """
+
+
+
 # 5. Inventory Management System:
 
 # Create a list to store the items in inventory.
@@ -66,17 +119,25 @@ def shopping_cart(products: list[dict]):
 # Implement functions to add, remove, search, and update items in the inventory.
 # Use for loops to manage the various inventory operations.
 
+
+
 # 6. Password Generator:
 
 # Create a function that generates a random password with a specified length and desired character types (lowercase letters, uppercase letters, numbers, symbols).
 # Allow the user to specify the password length and desired character types.
 # Generate and return a random password that meets the user's criteria.
 
+""" def password(lenght: int, character: str): """
+    
+
+
+
 # 7. Roman Numeral Conversion:
 
 # Create a function that converts a given integer to its Roman numeral representation.
 # Handle numbers from 1 to 3999.
 # Use a combination of string manipulation and conditional statements to build the Roman numeral.
+
 # 8. ATM Machine Simulator:
 
 # Create a function that simulates an ATM machine.
@@ -84,18 +145,21 @@ def shopping_cart(products: list[dict]):
 # Allow the user to perform transactions such as deposit, withdraw, and check balance.
 #  Validate transactions against the account balance and available funds.
 # Provide appropriate feedback to the user for each transaction.
+
 # 9. Caesar Cipher Encryption/Decryption
 
 # Create functions for encrypting and decrypting a message using the Caesar cipher.
 # Allow the user to specify the shift value (number of positions to shift each letter).
 #  Handle both encryption and decryption using the same function with appropriate adjustments.
 # Encrypt and decrypt the given message using the specified shift value.
+
 # 10. Anagram Checker:
 
 # Create a function that checks whether two given strings are anagrams of each other.
 # Convert both strings to lowercase and remove any non-alphabetic characters.
 # Sort the characters of each string and compare the sorted strings for equality.
 # Indicate whether the strings are anagrams or not.
+
 # 11. Sieve of Eratosthenes Prime Number Generator:
 
 # Create a function that generates a list of prime numbers up to a specified limit using the Sieve of Eratosthenes algorithm.
