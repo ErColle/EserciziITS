@@ -174,4 +174,4 @@ class Progetto:
         
     def set_budget(self, new_budget: RealGEZ) -> None:
 
-        self._budget = new_budget       
+        self._budget = new_budget               
