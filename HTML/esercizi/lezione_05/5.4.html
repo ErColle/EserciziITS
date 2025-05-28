@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title> Document </title>
+</head>
+<body>
+    <div id="div"></div>
+
+    <script>
+        function creaLinee() {
+            let contenitore = document.getElementById("contenitore");
+
+            for (let i = 0; i <= 100; i += 5) {
+                let linea = document.createElement("hr");
+                linea.className = "linea";
+                linea.style.width = i + "%";
+                contenitore.appendChild(linea);
+            }
+        }
+
+        creaLinee();
+    </script>
+</body>
+</html>

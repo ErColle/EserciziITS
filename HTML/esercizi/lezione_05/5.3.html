@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Indovina il Numero</title>
+    <script>
+        let numeroCasuale = Math.floor(Math.random() * 101);
+        let tentativi = 0;
+
+        function controllaNumero() {
+            let input = document.getElementById("tentativo").value;
+            let messaggio = "";
+            tentativi++;
+
+            if (input == numeroCasuale) {
+                messaggio = "Complimenti! Hai indovinato in " + tentativi + " tentativi.";
+            } else if (input < numeroCasuale) {
+                messaggio = "Il numero è più grande!";
+            } else {
+                messaggio = "Il numero è più piccolo!";
+            }
+
+            document.getElementById("risultato").innerText = messaggio;
+            document.getElementById("conteggio").innerText = "Tentativi: " + tentativi;
+        }
+
+        function nuovoGioco() {
+            numeroCasuale = Math.floor(Math.random() * 101);
+            tentativi = 0;
+            document.getElementById("risultato").innerText = "";
+            document.getElementById("conteggio").innerText = "Tentativi: 0";
+            document.getElementById("tentativo").value = "";
+        }
+    </script>
 </head>
 <body>
-    
-    <form action=""></form>
+    <h1>Indovina il Numero!</h1>
+    <input type="text" id="tentativo" placeholder="Inserisci un numero">
+    <button onclick="controllaNumero()">Controlla</button>
+    <p id="risultato"></p>
+    <p id="conteggio">Tentativi: 0</p>
+    <button onclick="nuovoGioco()">Nuovo Gioco</button>
 </body>
 </html>
