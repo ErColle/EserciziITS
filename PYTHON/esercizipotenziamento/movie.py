@@ -44,6 +44,7 @@ class Customer:
 
 
 class VideoRentalStore:
+    
     def __init__(self):
         self.movies: dict[str, Movie] = {}      # chiave: movie_id
         self.customers: dict[str, Customer] = {}  # chiave: customer_id
