@@ -26,4 +26,22 @@ Caratteri speciali, numeri e lettere accentate non devono essere modificati.
 Le funzioni non devono stampare nulla a schermo, ma restituire la stringa cifrata o
 decifrata. """
 
-def cifrario_di_cesare
+from string import ascii_lowercase
+
+def cifrario_di_cesare(stringa: str, key: int):
+    
+    lettere = ascii_lowercase
+    cifrato = ''
+    
+    for carattere in stringa: 
+        
+        if carattere in lettere:
+            
+            indice = lettere.index(carattere)
+            posizione = (indice+key) % 26
+            cifrato += lettere[posizione] 
+            
+    return cifrato
+            
+
+print(cifrario_di_cesare("ciao", 4))
