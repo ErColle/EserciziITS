@@ -8,8 +8,7 @@ class Dipartimento:
     _indirizzo: Indirizzo # mutabile, [0..1], certamente noto alla nascita
     _citta: Citta # noto alla nascita
 
-    def __init__(self, nome: str, telefono: str, indirizzo: Indirizzo,
-                 c: Citta) -> None:
+    def __init__(self, nome: str, telefono: str, indirizzo: Indirizzo,c: Citta) -> None:
         self.set_nome(nome)
 
         self._telefoni = set()

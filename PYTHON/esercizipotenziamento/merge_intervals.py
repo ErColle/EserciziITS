@@ -11,16 +11,16 @@ def merge_intervals(intervals):
                 
                 couple = [intervals[i][0], intervals[i +1][1]]
                 
-                del intervals[i], intervals[i + 1]  
+                del intervals[i], intervals[i]  
                 
                 new_list.append(couple) 
             
             else:
                 new_list.append(intervals[i]) 
         
-        return new_list
+    return new_list
             
                     
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 
-print(merge_intervals(intervals)) # restituisce [[1, 5]]
+print(merge_intervals(intervals)) 
