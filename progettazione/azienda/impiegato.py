@@ -7,6 +7,8 @@ class Impiegato:
     _cognome: str # noto alla nascita
     _nascita: date # <<immutable>>, # noto alla nascita
     _stipendio: RealGEZ # # noto alla nascita
+    
+    _progetti: dict[Pro] 
 
     def __init__(self, nome:str, cognome:str, nascita: date, stipendio: RealGEZ) -> None:
         self.set_nome(nome)
