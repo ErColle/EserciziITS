@@ -126,10 +126,29 @@ def combattimento(a: Alieno, m: Mostro):
     
     if isinstance(a, Alieno) and isinstance(m, Mostro):
         
+        ris = pariUguali(a.getMunizioni(), m.getAssalto())
         
+        if ris.count(1) == 4:
+            print(f"{m.getVittoria()}\n{m.getVittoria()}\n{m.getVittoria()}")
+            return m
+        
+        else:
+            print(f"{m.getSconfitta()}\n")
+            return a
     
     else: 
         print("Cobattimento interrotto!")
+        return None
+    
+""" proclamaVincitore(c: Creatura). 
+Questo metodo stampa a schermo se hanno vinto gli alieni o i mostri ( a seconda dell'oggetto c) e , 
+mostra il vincitore all'interno di un rettangolo con contorno di * come nell'esempio. """
+
+def proclamaVincitore(c: Creatura):
+    if isinstance(c, Alieno):
+        print(f"Hanno vinto gli ALIENI\n{c.getNome()}")
+    elif isinstance(c, Mostro):
+        print(f"Hanno vinto i MOSTRI\n{c.getNome()}")
     
 mostro1 = Mostro("Mostro", "aaaaa", "bbbbb")
 mostro1.setVittoria()
@@ -150,5 +169,12 @@ creatura1.setNome(123)
 creatura1.setNome("Luca")
 print(creatura1.getNome())
 print(creatura1)
+
+
+vincitore = combattimento(alieno1, mostro1)
+if vincitore:
+    proclamaVincitore(vincitore)
+
+
     
     

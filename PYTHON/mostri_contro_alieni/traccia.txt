@@ -80,6 +80,7 @@ proclamaVincitore(c: Creatura).
 Questo metodo stampa a schermo se hanno vinto gli alieni o i mostri ( a seconda dell'oggetto c) e , 
 mostra il vincitore all'interno di un rettangolo con contorno di * come nell'esempio.
 
+
 *****************************
 
 *                                         *
@@ -92,7 +93,7 @@ mostra il vincitore all'interno di un rettangolo con contorno di * come nell'ese
 
 *************************
 
-*                                   *
+*                       *
 
 *    Mostro: gOrThOr    *
 
