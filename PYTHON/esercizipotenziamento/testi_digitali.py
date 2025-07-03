@@ -47,7 +47,7 @@ class Email(Documento):
         self.titolo_messaggio = titolo_messaggio
         
     def getText(self):
-        return f"Da: {self.mittente}, A: {self.destinatario}\nTitolo: {self.titolo_messaggio}\nMessaggio: {self.testo} "
+        return f"Da: {self.mittente}, A: {self.getDestinatario()}\nTitolo: {self.getTitoloMessaggio()}\nMessaggio: {self.testo} "
     
     def writeToFile(self):
         
