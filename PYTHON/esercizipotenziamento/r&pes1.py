@@ -4,22 +4,22 @@ def calculateChanges(ore: float) -> float:
     if ore <= 3: 
         
         costo = 2 
-        return costo
-        
+        return f"Hours: Charge:\n  {ore}    {costo}$"       
+      
     elif ore >= 24:
         
         costo = 10 
-        return costo 
-    
+        return f"Hours: Charge:\n  {ore}    {costo}$" 
+        
     elif int(ore) - ore > 0: 
         
         costo += 1
         
     costo += ((int(ore) - 3)* 0.50) + 2     
     
-    return costo
+    return f"Hours: Charge:\n  {ore}     {costo}$"   
 
-print(calculateChanges(4))
+print(calculateChanges(2))
         
     
      
