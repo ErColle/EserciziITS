@@ -1,10 +1,23 @@
 
-// Cos’è JavaScript?
-// Inizialmente creato per i browser, oggi usato ovunque (anche con Node.js).
-// In questo corso ci concentriamo su JS per il frontend (es. React).
+// ===============================
+// COS'È JAVASCRIPT?
+/*
+JavaScript è un linguaggio di programmazione nato per il web.
+Permette di rendere le pagine interattive e dinamiche.
+Oggi è usato anche fuori dal browser (Node.js, React Native, ecc.).
+*/
 
-// Esempio di inserimento inline (non consigliato per progetti grandi):
-// <script> console.log("Hello World"); </script>
+// Inserimento inline (sconsigliato)
+/*
+<script>
+  console.log("Ciao mondo!");
+</script>
+*/
 
-// Esempio con file esterno (consigliato):
-// <script src="script.js"></script>
+// Inserimento da file esterno (consigliato)
+/*
+<script src="script.js"></script>
+*/
+
+// Esempio semplice: messaggio nella console
+console.log("Benvenuto in JavaScript!");

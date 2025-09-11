@@ -1,14 +1,14 @@
 
-// Destrutturazione
+// ===============================
+// DESTRUTTURAZIONE
+/*
+Permette di estrarre valori da array o oggetti in modo compatto.
+*/
 
-const userData = ["Rob", "Del"];
-const [firstname, lastname] = userData;
-console.log(firstname, lastname);
+const dati = ["Mario", 30];
+const [nome, eta] = dati;
+console.log(nome, eta);
 
-const user = { name: "Rob", age: 46 };
-const { name, age } = user;
-console.log(name, age);
-
-// Alias
-const { name: userName, age: userAge } = user;
-console.log(userName, userAge);
+const user = { nome: "Luca", eta: 25 };
+const { nome: n, eta: e } = user;
+console.log(n, e);

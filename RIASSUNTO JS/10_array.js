@@ -1,14 +1,20 @@
 
-// Array e metodi
+// ===============================
+// ARRAY E METODI
+/*
+Gli array servono a contenere liste ordinate di valori.
+*/
 
 const hobbies = ["sport", "cucina", "lettura"];
-console.log(hobbies[0]); // sport
+console.log(hobbies[0]);
 
-hobbies.push("lavoro");
-console.log(hobbies);
+// Aggiungere elementi
+hobbies.push("viaggio");
 
-const index = hobbies.findIndex(item => item === "sport");
+// Map -> trasforma elementi
+const nuovi = hobbies.map(h => h + "!");
+console.log(nuovi);
+
+// findIndex -> trova posizione
+const index = hobbies.findIndex(h => h === "cucina");
 console.log(index);
-
-const modified = hobbies.map(item => item + "!");
-console.log(modified);

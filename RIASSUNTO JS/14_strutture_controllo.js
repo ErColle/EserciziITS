@@ -1,14 +1,18 @@
 
-// Strutture di controllo
+// ===============================
+// STRUTTURE DI CONTROLLO
+/*
+if, else, for, while...
+*/
 
-let password = "Ciao";
-if (password === "Ciao") {
-  console.log("Accesso concesso");
+let x = 10;
+if (x > 5) {
+  console.log("x è maggiore di 5");
 } else {
-  console.log("Accesso negato");
+  console.log("x è minore o uguale a 5");
 }
 
-const hobbies = ["Sport", "Cucina"];
-for (const hobby of hobbies) {
-  console.log("Hobby:", hobby);
+const numeri = [1, 2, 3];
+for (const n of numeri) {
+  console.log("Numero:", n);
 }

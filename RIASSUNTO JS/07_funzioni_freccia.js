@@ -1,9 +1,21 @@
 
-// Funzioni freccia (Arrow functions)
-const saluta = (nome, messaggio) => {
-  console.log(nome + ": " + messaggio);
-};
-saluta("Max", "Ciao");
+// ===============================
+// FUNZIONI FRECCIA
+/*
+Sintassi più compatta per scrivere funzioni.
+*/
 
-// Uso tipico: callback in React o JS
-// <button onClick={() => saluta("Max", "Ciao")}>Click</button>
+// Classica
+function saluta(nome) {
+  console.log("Ciao " + nome);
+}
+
+// Freccia
+const salutaFreccia = (nome) => {
+  console.log("Ciao " + nome);
+};
+
+salutaFreccia("Luca");
+
+// Esempio veloce (callback)
+setTimeout(() => console.log("Eseguito dopo 2 secondi"), 2000);

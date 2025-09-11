@@ -1,20 +1,25 @@
 
-// Approfondimento su this
+// ===============================
+// APPROFONDIMENTO SU 'this'
+/*
+- Nelle funzioni classiche, this dipende da chi chiama la funzione
+- Nelle funzioni freccia, this è legato al contesto in cui la funzione è scritta
+*/
 
-// Funzione normale -> this dinamico
 function mostraNome() {
   console.log(this.nome);
 }
-const persona = { nome: "Max", mostraNome };
-persona.mostraNome(); // "Max"
 
-// Funzione freccia -> this lessicale
+const persona = { nome: "Anna", mostraNome };
+persona.mostraNome(); // "Anna"
+
+// Arrow function mantiene il contesto
 const persona2 = {
-  nome: "Anna",
+  nome: "Luca",
   mostraNome: function () {
     setTimeout(() => {
-      console.log(this.nome);
-    }, 1000);
+      console.log(this.nome); // "Luca"
+    }, 500);
   },
 };
 persona2.mostraNome();

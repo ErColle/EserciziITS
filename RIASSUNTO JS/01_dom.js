@@ -1,11 +1,21 @@
 
-// Cos'è il DOM?
-// Il DOM è una rappresentazione ad albero degli elementi HTML.
-// Serve per manipolare la UI tramite JavaScript.
-
-// Esempio: selezionare un elemento e cambiarne il contenuto
+// ===============================
+// COS'È IL DOM?
+/*
+Il DOM (Document Object Model) è una rappresentazione ad albero della pagina web.
+Ogni elemento HTML diventa un oggetto che può essere manipolato con JavaScript.
+*/
+ 
+// Selezione di un elemento tramite id
 const titolo = document.getElementById("titolo");
+
+// Modifica del contenuto testuale
 titolo.textContent = "Nuovo Titolo";
 
-// Possiamo anche cambiare lo stile
+// Modifica dello stile
 titolo.style.color = "red";
+
+// Creazione dinamica di un nuovo elemento
+const nuovoParagrafo = document.createElement("p");
+nuovoParagrafo.textContent = "Questo paragrafo è stato aggiunto con JS.";
+document.body.appendChild(nuovoParagrafo);

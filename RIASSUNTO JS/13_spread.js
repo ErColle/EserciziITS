@@ -1,11 +1,15 @@
 
-// Spread operator
+// ===============================
+// SPREAD OPERATOR
+/*
+Permette di "espandere" array e oggetti.
+*/
 
-const hobby1 = ["Nuoto", "Ciclismo"];
-const hobby2 = ["Lettura"];
-const unione = [...hobby1, ...hobby2];
-console.log(unione);
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const unito = [...arr1, ...arr2];
+console.log(unito);
 
-const utente = { nome: "Mario", eta: 30 };
-const utenteEsteso = { ...utente, isAdmin: true };
-console.log(utenteEsteso);
+const base = { nome: "Anna" };
+const esteso = { ...base, eta: 22 };
+console.log(esteso);

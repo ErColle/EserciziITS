@@ -1,14 +1,18 @@
 
-// Funzioni in JavaScript
+// ===============================
+// FUNZIONI
+/*
+Le funzioni servono a riutilizzare codice.
+*/
 
-// Definizione classica
-function saluta(nome, messaggio) {
-  console.log(nome + ": " + messaggio);
+// Dichiarazione normale
+function saluta(nome) {
+  console.log("Ciao " + nome);
 }
-saluta("Max", "Ciao");
+saluta("Mario");
 
-// Con return
-function creaSaluto(nome, messaggio) {
-  return nome + ": " + messaggio;
+// Con valore di ritorno
+function somma(a, b) {
+  return a + b;
 }
-console.log(creaSaluto("Manuel", "Come va?"));
+console.log(somma(5, 7));

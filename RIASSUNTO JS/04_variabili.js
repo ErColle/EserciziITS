@@ -1,24 +1,27 @@
 
-// Variabili in JavaScript
-// Possiamo usare let, const e var.
+// ===============================
+// VARIABILI IN JAVASCRIPT
+/*
+Tipi principali: let, const, var
+- let: variabile modificabile
+- const: costante (non modificabile)
+- var: vecchia sintassi, da evitare
+*/
 
-// Esempio con let
 let nome = "Mario";
-let eta = 30;
-nome = "Luigi"; // riassegnazione possibile
+nome = "Luigi"; // posso riassegnare
 
-// Esempio con const
-const piGreco = 3.14159;
-// piGreco = 3.15; // Errore! Non si può riassegnare
+const PI = 3.14;
+// PI = 3.15 -> Errore!
 
-// Tipi diversi
-let stringa = "Ciao";
+// Differenza con var (hoisting)
+console.log(a); // undefined
+var a = 5;
+console.log(a); // 5
+
+// Vari tipi di valori
 let numero = 42;
+let stringa = "Ciao!";
 let booleano = true;
 let nullo = null;
 let indefinito;
-
-// Differenza con var (function scope + hoisting)
-console.log(a); // undefined (hoisting)
-var a = 5;
-console.log(a); // 5

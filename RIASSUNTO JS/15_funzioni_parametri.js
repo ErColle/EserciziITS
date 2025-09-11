@@ -1,13 +1,17 @@
 
-// Funzioni come parametri
+// ===============================
+// FUNZIONI COME PARAMETRI
+/*
+Le funzioni possono essere passate come argomenti.
+*/
 
-setTimeout(() => {
-  console.log("Sono passati 3 secondi!");
-}, 3000);
-
-function greeter(greetFn) {
-  console.log("Inizio saluto...");
-  greetFn();
-  console.log("Fine saluto.");
+function esegui(fn) {
+  console.log("Inizio...");
+  fn();
+  console.log("Fine...");
 }
-greeter(() => console.log("Ciao a tutti!"));
+
+esegui(() => console.log("Funzione passata come parametro!"));
+
+// setTimeout accetta una funzione come parametro
+setTimeout(() => console.log("Ciao dopo 2 secondi"), 2000);

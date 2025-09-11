@@ -1,16 +1,17 @@
 
-// Assegnazione per riferimento
+// ===============================
+// ASSEGNAZIONE PER RIFERIMENTO
+/*
+Gli oggetti e gli array in JS sono passati per riferimento.
+*/
 
 const persona1 = { nome: "Mario" };
 const persona2 = persona1;
 persona2.nome = "Luigi";
-console.log(persona1.nome); // Luigi
 
-const array1 = [1, 2, 3];
-const array2 = array1;
-array2.push(4);
-console.log(array1); // [1,2,3,4]
+console.log(persona1.nome); // "Luigi"
 
-// Copie indipendenti
-const persona3 = Object.assign({}, persona1);
-const array3 = [...array1];
+// Copia indipendente
+const persona3 = { ...persona1 };
+persona3.nome = "Carlo";
+console.log(persona1.nome, persona3.nome);

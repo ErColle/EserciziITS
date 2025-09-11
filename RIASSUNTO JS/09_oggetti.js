@@ -1,25 +1,30 @@
 
-// Oggetti in JavaScript
+// ===============================
+// OGGETTI
+/*
+Gli oggetti raggruppano proprietà e metodi.
+*/
 
 const utente = {
-  nome: "Rob",
-  eta: 46,
+  nome: "Mario",
+  eta: 30,
   saluta: function () {
-    console.log("Ciao!");
-    console.log(this.nome);
+    console.log("Ciao! Sono " + this.nome);
   },
 };
+
 utente.saluta();
 
-// Classi
+// Con classi (ES6)
 class Utente {
   constructor(nome, eta) {
     this.nome = nome;
     this.eta = eta;
   }
-  saluta() {
-    console.log("Ciao! " + this.nome);
+  descrizione() {
+    console.log(this.nome + " ha " + this.eta + " anni.");
   }
 }
-const utenteUno = new Utente("Manuel", 35);
-utenteUno.saluta();
+
+const u1 = new Utente("Giulia", 25);
+u1.descrizione();

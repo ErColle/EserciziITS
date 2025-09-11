@@ -1,21 +1,22 @@
 
-// Operatori in JavaScript
-
-// Operatori aritmetici
+// ===============================
+// OPERATORI
+// Aritmetici
 let somma = 10 + 5;
-let differenza = 10 - 5;
+let prodotto = 10 * 2;
 
 // Confronto
-let isEqual = 10 === 10;
-let isGreater = 10 > 5;
+console.log(10 === 10); // true
+console.log(10 > 5);    // true
 
 // Logici
-let andOperator = true && false;
-let orOperator = true || false;
+console.log(true && false); // false
+console.log(true || false); // true
 
 // Condizionali
-if (10 === 10) {
-  console.log("Uguali");
+let eta = 18;
+if (eta >= 18) {
+  console.log("Sei maggiorenne");
 } else {
-  console.log("Diversi");
+  console.log("Sei minorenne");
 }
