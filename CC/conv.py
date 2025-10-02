@@ -27,4 +27,6 @@ messaggio_crittografato = pow(mess, 3) % modulo
 
 print("\n\n\nmessaggio crittografato:", messaggio_crittografato)
 
-# decodifico il messaggio con la chiave privata
+# decodifico il messaggio con la chiave privato
+
+
