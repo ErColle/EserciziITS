@@ -8,3 +8,4 @@ def flatten_once(nested: list) -> list:
     return new_lista
 
 print(flatten_once([1, 2, 3, 4, [1, 2, 3, 5], [1, 2, 3]]))
+
