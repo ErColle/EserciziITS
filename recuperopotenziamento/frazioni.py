@@ -28,8 +28,8 @@
 
 class Frazione:
     def __init__(self, numeratore, denominatore):
-        self.setNumeratore(numeratore)
-        self.setDenominatore(denominatore)
+        self.numeratore = numeratore
+        self.denominatore = denominatore
         
     def setNumeratore(self, numeratore):
         if isinstance(numeratore, int):
@@ -56,5 +56,40 @@ class Frazione:
     def __str__(self):
         return f"{self.numeratore} / {self.denominatore}"
     
-def semplifica():
-    pass
+def mcd(x: int, y: int):
+    
+    divisorix = []
+    divisoriy = []
+    comuni = []
+    
+    for num in range(x, 0, -1):
+        if x % num == 0:
+            divisorix.append(num)
+        
+    for num in range(y, 0, -1):
+        if y % num == 0:
+            divisoriy.append(num)    
+        
+    for num in divisorix:
+        if num in divisoriy:
+            comuni.append(num)
+    if comuni == []:
+        return 1
+    else:
+        return max(comuni)
+    
+def semplifica(frazioni: list[Frazione]):
+    
+    irriducibili = []
+    
+    for frazione in list:
+        if mcd(frazione.getNumeratore(), frazione.getDenominatore()) == 1:
+            irriducibili.append(frazione)
+    
+
+frazione1 = Frazione(10, 5)
+frazione2 = Frazione(12, 4)
+frazione3 = Frazione(22, 8)
+
+print(frazione1 , frazione2 )
+
