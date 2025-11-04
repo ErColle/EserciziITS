@@ -1,4 +1,4 @@
-def bubble_sort(list: list[int]):
+def bubble_sort(list):
     
     for _ in range(len(list)):
         for i in range(len(list)):

@@ -13,3 +13,4 @@ def merge_dictionaries(dict1: dict, dict2: dict) -> dict:
 
 	
 print(merge_dictionaries({'a': 1, 'b': 3}, {'c': 4}))
+
