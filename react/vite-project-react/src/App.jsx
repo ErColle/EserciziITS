@@ -1,0 +1,36 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import CampoRicerca from './assets/componenti/ CampoRicerca'
+import Checkbox_counter from './assets/componenti/checkobox_counter'
+import Termostato from './assets/componenti/Contatore'
+import Contatore from './assets/componenti/Contatore'
+import MessaggioSegreto from './assets/componenti/MessaggioSegreto'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+
+    {/* COMPONENTI */}
+
+      <CampoRicerca></CampoRicerca>
+      <Checkbox_counter></Checkbox_counter>
+      <MessaggioSegreto></MessaggioSegreto>
+      <Contatore></Contatore>
+    </>
+  )
+}
+
+export default App
