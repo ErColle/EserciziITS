@@ -1,1 +1,2 @@
 npm create vite@lastest
+npm run dev per runnare

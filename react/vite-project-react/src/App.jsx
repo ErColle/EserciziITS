@@ -2,11 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import CampoRicerca from './assets/componenti/ CampoRicerca'
-import Checkbox_counter from './assets/componenti/checkobox_counter'
-import Termostato from './assets/componenti/Contatore'
-import Contatore from './assets/componenti/Contatore'
-import MessaggioSegreto from './assets/componenti/MessaggioSegreto'
+import CampoRicerca from './componenti/ CampoRicerca'
+import Checkbox_counter from './componenti/checkobox_counter'
+import Termostato from './componenti/Contatore'
+import Contatore from './componenti/Contatore'
+import MessaggioSegreto from './componenti/MessaggioSegreto'
 
 function App() {
   const [count, setCount] = useState(0)
