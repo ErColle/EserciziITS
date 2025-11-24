@@ -1,0 +1,5 @@
+sudo docker exec -it its_postgresql bash
+
+cd home 
+ 
+psql -U postgres
