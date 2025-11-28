@@ -27,6 +27,8 @@ function App() {
 
       <CampoRicerca></CampoRicerca>
       <Checkbox_counter></Checkbox_counter>
+      <br />
+      <br />
       <MessaggioSegreto></MessaggioSegreto>
       <Contatore></Contatore>
     </>

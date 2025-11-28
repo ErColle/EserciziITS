@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Document</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                background-color: white;
+                padding: 30px
+            }
+            #root{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+
+            }
+            .card {
+                background-color: white;
+                border: 1px solid lightgray;
+                padding: 20px;
+                border-radius: 15px;
+                max-width: 350px;
+            }
+            .card p{
+                font-size: 0.8rem;
+            }
+            .card ul{
+                list-style-type: none;
+                padding-left: 0;
+            }
+            .card li{
+                margin: 5px 0;
+                padding: 2px 0;
+            }
+            .card h2{
+                font-size: 1.4rem;
+            }
+            .car small{
+                color: blue;
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script>
+            const urlPosts = "https://jsonplaceholder.typicode.com/posts/";
+            const urlUsers = "https://jsonplaceholder.typicode.com/users/";
+            const urlCommenti = "https://jsonplaceholder.typicode.com/comments";
+            const divContainer = document.getElementById("root");
+
+
+            async function fetchDetailsPost(post) {
+               
+                const userP=  fetch(urlUsers + post.userId ).then((resp) => resp.json());
+                const commentiP= fetch(urlCommenti + "?postId="+post.id ).then((resp) => resp.json());
+
+                const [user, comments] = await Promise.all([userP, commentiP])
+                
+                return {
+                    ...post,
+                    user: user.name,
+                    comments
+                }
+            }
+            // funzione per leggere tutti i post
+            async function loadAllPosts() {
+                try {
+                    const response = await fetch(urlPosts);
+                    if (!response.ok) {
+                        throw new Error("Errore nella chiamata");
+                    }
+
+                    const allPosts = await response.json();
+                    const allDataPromise = allPosts.map(post=>(
+                        fetchDetailsPost(post)
+                    ))
+
+                    const allData = await Promise.all(allDataPromise)
+                    divContainer.innerHTML = "";
+
+                    allData.forEach(post => {
+                        const commentsHtml = post.comments.map(c =>(
+                            `<li><strong>${c.name}</strong></li>`
+                        )).join("")
+
+                        divContainer.innerHTML += `
+                            <div class = 'card'>
+                                <h2>${post.title}</h2>
+                                <p>${post.body}</p>
+                                <small>${post.user}</small>
+                                <ul>${commentsHtml}</ul>
+                            </div>
+                        `;
+                    });
+
+                } catch (err) {
+                    console.error("Errore nel caricamento dei dati: " + err);
+                }
+            }
+
+            // Avvio automatico
+            loadAllPosts();
+        </script>
+    </body>
+</html>

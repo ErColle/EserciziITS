@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: #efefef;
+            border: 1px solid #c9c9c9;
+            padding: 55px;
+            border-radius: 15px;
+            max-width: 300px;
+            margin:auto;
+        }
+        body{
+            text-align:center;
+        }
+        li{
+            list-style-type: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- mandare a video i dati del post dell'endpoint-->
+    </div>
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/posts/1";
+      const urlUsers = "https://jsonplaceholder.typicode.com/users/";
+      const urlCommenti="https://jsonplaceholder.typicode.com/comments"//?postId=1
+
+      const div = document.querySelector("div");
+      fetch(url)
+        .then((resp) => resp.json())
+        .then((post) => {
+          //codice consumatore ed è sempre dentro una then, consuma il risultato di una promise
+          div.innerHTML = `<h2>${post.title}</h2><p>${post.body}</p>`;
+
+          const userP=  fetch(urlUsers + post.userId ).then((resp) => resp.json());
+          const commentiP= fetch(urlCommenti + "?postId="+post.id ).then((resp) => resp.json());
+
+          Promise.all([userP,commentiP]).then(result=>
+          {
+                const user=result[0];
+                div.innerHTML += "<small>" + user.name + "</small>";
+                const commenti=result[1];
+              
+                  let itemUl=""
+                commenti.forEach(element => {
+                     itemUl+="<li>"+element.name+"</li>"
+                });
+                 div.innerHTML +="<ul>"+itemUl+"</ul>";
+          })
+
+        //   fetch(urlUsers + post.userId)
+        //     .then((resp) => resp.json())
+        //     .then((user) => {
+        //       div.innerHTML += "<small>" + user.name + "</small>";
+        //     });
+        });
+    </script>
+  </body>
+</html>
