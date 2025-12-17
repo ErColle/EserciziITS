@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TodoApp in JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div id="tasks"></div>
+
+    <div class="container">
+        <input type="text" id="input" placeholder="Scrivi un task">
+        <input type="button" onclick="addTask()" id="submit" value="Aggiungi">
+    </div>
+
+    <script>
+        const URL_BASE = "https://todoapp-a8c0b-default-rtdb.europe-west1.firebasedatabase.app/";
+
+        const input = document.getElementById("input");
+        const tasksDiv = document.getElementById("tasks");
+
+        function addTask(){
+            const newtask = {
+                text: input.value, 
+                completed: false
+            };
+
+            if(newtask.text === "") return; 
+
+            fetch(URL_BASE + ".json", {
+                method: "POST", 
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newtask)
+            }).then(response => response.json()).then(data => console.log(data)).catch(error => console.error("Errore:", error));
+        }
+    </script>
+
+</body>
+</html>
