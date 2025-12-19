@@ -7,6 +7,8 @@ import Checkbox_counter from './componenti/checkobox_counter'
 import Termostato from './componenti/Contatore'
 import Contatore from './componenti/Contatore'
 import MessaggioSegreto from './componenti/MessaggioSegreto'
+import Card from './componenti/card container/card'
+import Container from './componenti/card container/container'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,12 +27,14 @@ function App() {
 
     {/* COMPONENTI */}
 
-      <CampoRicerca></CampoRicerca>
+      {/* <CampoRicerca></CampoRicerca>
       <Checkbox_counter></Checkbox_counter>
       <br />
       <br />
       <MessaggioSegreto></MessaggioSegreto>
-      <Contatore></Contatore>
+      <Contatore></Contatore> */}
+      {/* <Container></Container> */}
+
     </>
   )
 }
